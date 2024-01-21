@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <dialog id="dialog" align="center">
+      <div class="container-dialog">
+        <div class="icon-container-dialog">
+          <img src="./assets/checked.png" alt="Checked Icon" />
+        </div>
+        <div class="text-container-dialog">
+          <h3>Deleted Successfully</h3>
+          <p>Book Title: <span id="book-title-dialog"></span></p>
+          <p>Book Author: <span id="book-author-dialog"></span></p>
+          <p>Book Date: <span id="book-date-dialog"></span></p>
+        </div>
+      </div>
+    </dialog>
+
+    <header id="myHeader">
+      <img src="./assets/bookshelf.svg" alt="" />
+      <h1 class="header-title">Bookshelf App</h1>
+    </header>
+
+    <div class="container-contents">
+      <div class="container" id="add-todo">
+        <h2 class="container-header text-center">Insert New Book</h2>
+        <form class="form" action="#" id="form">
+          <div class="form-group form-title">
+            <label for="book-title">Book Title</label>
+            <input type="text" id="book-title" name="book-title" required />
+          </div>
+          <div class="form-group form-title">
+            <label for="book-author">Book Author</label>
+            <input type="text" id="book-author" name="book-author" required />
+          </div>
+          <div class="form-group form-title">
+            <label for="book-date">Released Date</label>
+            <input type="date" id="book-date" name="book-date" required />
+          </div>
+          <div class="form-group form-title">
+            <label for="isComplete"
+              >Mark as Finished Reading<input
+                type="checkbox"
+                id="isComplete"
+                name="isComplete"
+            /></label>
+          </div>
+          <input
+            type="submit"
+            value="Add Book"
+            name="Submit"
+            class="btn-submit"
+          />
+        </form>
+      </div>
+
+      <div class="container">
+        <h2 class="container-header text-center">Search Books</h2>
+        <div class="form-group form-title search-container">
+          <form class="search-form">
+            <div class="input-group">
+              <button type="button" class="btn-search" id="search-btn">
+                <img src="./assets/search.svg" alt="Search Icon" />
+              </button>
+              <input
+                type="text"
+                id="input-search"
+                name="search"
+                placeholder="Search any Books"
+                list="option-books"
+                autocomplete="off"
+              />
+              <button type="button" class="btn-clear" id="clear-btn">
+                <img src="./assets/clear.svg" alt="Clear Icon" />
+              </button>
+            </div>
+          </form>
+        </div>
+        <datalist id="option-books"></datalist>
+        <div class="list-item" id="result-books"></div>
+      </div>
+
+      <div class="container">
+        <h2 class="container-header text-center">
+          Belum selesa dibaca:
+          <span id="unfinished-book-count"></span>
+        </h2>
+        <div class="list-item" id="unfinished-books"></div>
+      </div>
+
+      <div class="container">
+        <h2 class="container-header text-center">
+          Selesai dibaca: <span id="finished-book-count"></span>
+        </h2>
+        <div class="list-item" id="finished-books"></div>
+      </div>
+    </div>
+
+    <footer>
+      <h3 class="header-title">Bookshelf App - Arya Dzikra</h3>
+    </footer>
+
+    <script src="./src/js/book.js" type="module"></script>
+    <script src="./src/js/main.js" type="module"></script>
+    <script src="./src/js/utility.js" type="module"></script>
+    <script src="./src/app.js" type="module"></script>
+  </body>
+</html>

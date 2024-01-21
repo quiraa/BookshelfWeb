@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --primary: #492e87;
+  --secondary: #301e5a;
+  --red: #ff4d4d;
+  --yellow: #ffcc00;
+  --green: #66cc66;
+  --container: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 0;
+  align-items: center;
+  background: var(--primary);
+  padding: 24px;
+  color: white;
+}
+
+header img {
+  max-height: 60px;
+  margin-right: 8px;
+}
+
+.container-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-contents .container {
+  width: 1024px;
+  border-radius: 16px;
+  margin: 16px;
+  background: var(--container);
+  padding: 16px;
+  flex-grow: 1;
+  height: fit-content;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.card-item {
+  border-radius: 16px;
+  margin-top: 16px;
+  padding: 12px 24px 12px 24px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-item > .inner h2 {
+  margin-bottom: unset;
+}
+
+.card-item > .inner p {
+  margin-top: 5px;
+}
+
+.card-item button {
+  margin-left: auto; /* Membuat button berada di pojok kanan */
+}
+
+.form {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  height: 512px;
+  border-radius: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.form-group.form-title .search-form {
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.form-group.form-title input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--container);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 24px;
+}
+
+.form-group.form-title .btn-search,
+.form-group.form-title .btn-clear {
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  max-width: 64px;
+  background-color: transparent;
+}
+
+.search-icon,
+.btn-search,
+.btn-clear {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.btn-clear {
+  display: none;
+}
+
+.form-group.form-title input[type="text"]:not(:placeholder-shown) + .btn-clear {
+  display: block;
+}
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  background: var(--container);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.btn-submit {
+  width: 100%;
+  border-radius: 16px;
+  padding: 12px 24px;
+  border: 2px solid var(--primary);
+  color: var(--container);
+  background-color: var(--primary);
+  font-size: 24px;
+  margin-top: auto;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: var(--secondary);
+  color: white;
+}
+
+input[type="text"],
+input[type="date"],
+.btn-submit:focus {
+  outline: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form-title {
+  margin: auto 0;
+}
+
+.book-status-container {
+  display: flex;
+}
+
+.book-status-container button {
+  margin-left: 8px;
+}
+
+.delete-button,
+.unfinished-button,
+.finished-button {
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.delete-button {
+  background-color: var(--red); /* Warna merah */
+  color: white;
+  font-size: 16px;
+}
+
+.unfinished-button {
+  background-color: var(--yellow); /* Warna kuning ke oranye */
+  color: white;
+  font-size: 16px;
+}
+
+.finished-button {
+  background-color: var(--green); /* Warna hijau */
+  color: white;
+  font-size: 16px;
+}
+
+.status-finished {
+  background-color: var(--green);
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.status-unfinished {
+  background-color: var(--yellow);
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  z-index: 999;
+  box-shadow: 0px 10px 24px 0px rgba(144, 144, 144, 0.25);
+}
+
+.container-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  gap: 16px;
+  padding: 16px;
+  background-color: white;
+}
+
+.icon-container-dialog img {
+  margin-top: -40px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container-dialog {
+  width: 100%;
+}
+
+.text-container-dialog h3 {
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.text-container-dialog p {
+  font-size: 0.9rem;
+}
+
+footer {
+  background-color: var(--secondary);
+  text-align: center;
+  padding: 24px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-contents {
+    margin: 0px 16px;
+  }
+
+  .container-contents .container {
+    width: 100%;
+  }
+
+  .list-item {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container-contents {
+    margin: 0px 16px;
+  }
+
+  .container-contents .container {
+    width: 100%;
+  }
+
+  .list-item {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
